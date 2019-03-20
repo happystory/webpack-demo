@@ -1,0 +1,26 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "webpack demo",
+  "private": true,
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/happystory/webpack-demo.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "happystory",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/happystory/webpack-demo/issues"
+  },
+  "homepage": "https://github.com/happystory/webpack-demo#readme",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
