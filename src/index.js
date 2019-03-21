@@ -1,7 +1,10 @@
-import Header from './header';
-import Sidebar from './sidebar';
-import Content from './content';
+import avatar from './avatar.png';
+import './index.scss';
 
-new Header();
-new Sidebar();
-new Content();
+var img = new Image();
+img.classList.add('avatar');
+img.onload = () => {
+  const root = document.getElementById('root');
+  root.append(img);
+};
+img.src = avatar;
