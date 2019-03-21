@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -9,7 +10,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash:7].js',
+    filename: '[name].js',
     publicPath: '/'
   },
   module: {
@@ -20,8 +21,8 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 819,
-            name: '[name].[hash:7].[ext]',
-            outputPath: 'images/'
+            name: 'images/[name].[hash:7].[ext]',
+            outputPath: 'static'
           }
         }
       },
@@ -52,10 +53,20 @@ module.exports = {
             loader: 'postcss-loader'
           }
         ]
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'fonts/[name].[hash:7].[ext]',
+          outputPath: 'static'
+        }
       }
     ]
   },
   plugins: [
+    new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html'

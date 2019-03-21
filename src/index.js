@@ -1,10 +1,3 @@
-import avatar from './avatar.png';
-import './index.scss';
+import createAvatar from './createAvatar';
 
-var img = new Image();
-img.classList.add('avatar');
-img.onload = () => {
-  const root = document.getElementById('root');
-  root.append(img);
-};
-img.src = avatar;
+createAvatar();
